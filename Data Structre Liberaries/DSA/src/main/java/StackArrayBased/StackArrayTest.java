@@ -1,4 +1,5 @@
 package StackArrayBased;
+
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -7,28 +8,28 @@ public class StackArrayTest {
 
     @Test
     public void testPush() {
-        StackArrayOOP stack = new StackArrayOOP(5); // Stack size is 5
+        StackArrayOOP stack = new StackArrayOOP();
         stack.push(10);
         stack.push(20);
 
-        assertEquals(20, stack.peek());
+        assertEquals(20, stack.top());
         assertEquals(2, stack.size());
     }
 
     @Test
     public void testPop() {
-        StackArrayOOP stack = new StackArrayOOP(5);
+        StackArrayOOP stack = new StackArrayOOP();
         stack.push(10);
         stack.push(20);
 
-        int popped = stack.pop();
+        Object popped = stack.pop();
         assertEquals(20, popped);
         assertEquals(1, stack.size());
     }
 
     @Test
     public void testIsEmpty() {
-        StackArrayOOP stack = new StackArrayOOP(5);
+        StackArrayOOP stack = new StackArrayOOP();
         assertTrue(stack.isEmpty());
 
         stack.push(10);
@@ -37,26 +38,52 @@ public class StackArrayTest {
 
     @Test
     public void testPeek() {
-        StackArrayOOP stack = new StackArrayOOP(5);
+        StackArrayOOP stack = new StackArrayOOP();
         stack.push(10);
-        assertEquals(10, stack.peek());
+        assertEquals(10, stack.top());
 
         stack.push(20);
-        assertEquals(20, stack.peek());
+        assertEquals(20, stack.top());
     }
 
     @Test
-    public void testOverflow() {
-        StackArrayOOP stack = new StackArrayOOP(2);
-        stack.push(10);
-        stack.push(20);
+    public void testSize() {
+        StackArrayOOP stack = new StackArrayOOP();
+        assertEquals(0, stack.size());
 
-        assertThrows(RuntimeException.class, () -> stack.push(30)); // Should throw an exception
+        stack.push(10);
+        assertEquals(1, stack.size());
+
+        stack.push(20);
+        assertEquals(2, stack.size());
+
+        stack.pop();
+        assertEquals(1, stack.size());
+    }
+
+    @Test
+    public void testDynamicGrowth() {
+        StackArrayOOP stack = new StackArrayOOP();
+        for (int i = 0; i < 15; i++) {
+            stack.push(i);
+        }
+
+        assertEquals(15, stack.size());
+        assertEquals(14, stack.top());
     }
 
     @Test
     public void testUnderflow() {
-        StackArrayOOP stack = new StackArrayOOP(5);
-        assertThrows(RuntimeException.class, stack::pop); // Should throw an exception
+        StackArrayOOP stack = new StackArrayOOP();
+        assertThrows(IllegalStateException.class, stack::pop);
+    }
+
+    @Test
+    public void testDisplay() {
+        StackArrayOOP stack = new StackArrayOOP();
+        stack.push(10);
+        stack.push(20);
+
+        stack.display(); // Verify the output manually in console: 20 10
     }
 }

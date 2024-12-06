@@ -1,7 +1,7 @@
 package StackLinkedListBased;
-import LinkedList.LinkedList;
+import LinkedList.LinkedListProcedural;
 public class StackLinkedListProcedural {
-    private static LinkedList stack = new LinkedList();
+    private static LinkedListProcedural stack = new LinkedListProcedural();
     private static int size = 0;
     public static void push(int value) {
         stack.addFirst(value); // Add to the head of the linked list

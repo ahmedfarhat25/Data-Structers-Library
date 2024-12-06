@@ -1,44 +1,34 @@
 package StackArrayBased;
 
+import DynamicArray.ArrayProcedural;
+
 public class StackArrayProcedural {
-    private static final int MAX_SIZE = 100;
-    private static int[] stack = new int[MAX_SIZE];
-    private static int top = -1;
-
-    public static void push(int value) {
-        if (top == MAX_SIZE - 1) {
-            throw new RuntimeException("Stack Overflow");
-        }
-        stack[++top] = value;
+    public static void push(Object data) {
+        ArrayProcedural.add(data);
     }
 
-    public static int pop() {
-        if (isEmpty()) {
-            throw new RuntimeException("Stack Underflow");
-        }
-        return stack[top--];
+    public static void pop() {
+        ArrayProcedural.deletefirst();
     }
 
-    public static int peek() {
-        if (isEmpty()) {
-            throw new RuntimeException("Stack is empty");
+    public static Object top() {
+        if (ArrayProcedural.getSize() == 0) {
+            throw new IllegalStateException("Stack is empty");
         }
-        return stack[top];
+        return ArrayProcedural.getlastelement();
+    }
+
+    public static int size() {
+        return ArrayProcedural.getSize();
     }
 
     public static boolean isEmpty() {
-        return top == -1;
+        return ArrayProcedural.getSize() == 0;
     }
-
+    public static int search(Object data){
+        return ArrayProcedural.search(data);
+    }
     public static void display() {
-        if (isEmpty()) {
-            System.out.println("Stack is empty");
-            return;
-        }
-        for (int i = top; i >= 0; i--) {
-            System.out.print(stack[i] + " ");
-        }
-        System.out.println();
+        ArrayProcedural.display();
     }
-
 }

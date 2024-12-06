@@ -1,10 +1,10 @@
 package StackLinkedListBased;
-import LinkedList.LinkedList;
+import LinkedList.LinkedListProcedural;
 public class StackLinkedListOOP {
-    private LinkedList stack;
+    private LinkedListProcedural stack;
 
     public StackLinkedListOOP() {
-        stack = new LinkedList();
+        stack = new LinkedListProcedural();
     }
 
     public void push(int value) {

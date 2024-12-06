@@ -1,50 +1,40 @@
 package StackArrayBased;
 
+import DynamicArray.ArrayOOP;
+
 public class StackArrayOOP {
-    private int[] stack;
-    private int top;
+    private ArrayOOP array;
 
-    public StackArrayOOP(int maxSize) {
-        stack = new int[maxSize];
-        top = -1;
+    public StackArrayOOP() {
+        array = new ArrayOOP();
     }
 
-    public void push(int value) {
-        if (top == stack.length - 1) {
-            throw new RuntimeException("Stack Overflow");
-        }
-        stack[++top] = value;
+    public void push(Object value) {
+        array.add(value);
     }
 
-    public int pop() {
-        if (isEmpty()) {
-            throw new RuntimeException("Stack Underflow");
-        }
-        return stack[top--];
+    public Object pop() {
+        Object lastElement = array.getlastelement();
+        array.deleteLast();
+        return lastElement;
     }
 
-    public int peek() {
-        if (isEmpty()) {
-            throw new RuntimeException("Stack is empty");
-        }
-        return stack[top];
+    public Object top() {
+        return array.getlastelement();
     }
 
     public boolean isEmpty() {
-        return top == -1;
+        return array.getSize() == 0;
     }
-    public int size() {
-        return top + 1;
+    public int search(Object data){
+        return array.search(data);
+    }
+    public void display() {
+        array.display();
     }
 
-    public void display() {
-        if (isEmpty()) {
-            System.out.println("Stack is empty");
-            return;
-        }
-        for (int i = top; i >= 0; i--) {
-            System.out.print(stack[i] + " ");
-        }
-        System.out.println();
+
+    public int size() {
+        return array.getSize();
     }
 }
