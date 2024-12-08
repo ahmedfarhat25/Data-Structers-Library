@@ -1,6 +1,5 @@
 package StackArrayBased;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -57,8 +56,9 @@ public class StackArrayTest {
 
         stack.push(20);
         assertEquals(2, stack.size());
-        stack.pop();
 
+        stack.pop();
+        assertEquals(1, stack.size());
     }
 
     @Test

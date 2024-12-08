@@ -1,13 +1,35 @@
 package DynamicArray;
+
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-public class ArrayUnitTest{
+
+public class ArrayUnitTest {
 
     @Test
     public void testAdd() {
         ArrayOOP dynamicArray = new ArrayOOP();
         dynamicArray.add(0, "A");
         dynamicArray.add(1, "B");
+
+        assertEquals("[A, B]", dynamicArray.toString());
+        assertEquals(2, dynamicArray.getSize());
+    }
+
+    @Test
+    public void testAddFirst() {
+        ArrayOOP dynamicArray = new ArrayOOP();
+        dynamicArray.addFirst("A");
+        dynamicArray.addFirst("B");
+
+        assertEquals("[B, A]", dynamicArray.toString());
+        assertEquals(2, dynamicArray.getSize());
+    }
+
+    @Test
+    public void testAddLast() {
+        ArrayOOP dynamicArray = new ArrayOOP();
+        dynamicArray.addLast("A");
+        dynamicArray.addLast("B");
 
         assertEquals("[A, B]", dynamicArray.toString());
         assertEquals(2, dynamicArray.getSize());
@@ -34,6 +56,30 @@ public class ArrayUnitTest{
 
         dynamicArray.delete("B");
         assertEquals("[A, C]", dynamicArray.toString());
+        assertEquals(2, dynamicArray.getSize());
+    }
+
+    @Test
+    public void testDeleteFirst() {
+        ArrayOOP dynamicArray = new ArrayOOP();
+        dynamicArray.add(0, "A");
+        dynamicArray.add(1, "B");
+        dynamicArray.add(2, "C");
+
+        dynamicArray.deleteFirst();
+        assertEquals("[B, C]", dynamicArray.toString());
+        assertEquals(2, dynamicArray.getSize());
+    }
+
+    @Test
+    public void testDeleteLast() {
+        ArrayOOP dynamicArray = new ArrayOOP();
+        dynamicArray.add(0, "A");
+        dynamicArray.add(1, "B");
+        dynamicArray.add(2, "C");
+
+        dynamicArray.deleteLast();
+        assertEquals("[A, B]", dynamicArray.toString());
         assertEquals(2, dynamicArray.getSize());
     }
 
@@ -67,7 +113,7 @@ public class ArrayUnitTest{
             dynamicArray.add(i, i);
         }
 
-        for (int i = 0; i < 12; i++) {
+        for (int i = 14; i >= 3; i--) {
             dynamicArray.delete(i);
         }
 
@@ -91,5 +137,35 @@ public class ArrayUnitTest{
         dynamicArray.add(1, "B");
 
         assertEquals("[A, B]", dynamicArray.toString());
+    }
+
+    @Test
+    public void testClear() {
+        ArrayOOP dynamicArray = new ArrayOOP();
+        dynamicArray.add(0, "A");
+        dynamicArray.add(1, "B");
+        dynamicArray.clear();
+
+        assertTrue(dynamicArray.isEmpty());
+        assertEquals(10, dynamicArray.getCapacity());
+        assertEquals("[]", dynamicArray.toString());
+    }
+
+    @Test
+    public void testGetFirstElement() {
+        ArrayOOP dynamicArray = new ArrayOOP();
+        dynamicArray.add(0, "A");
+        dynamicArray.add(1, "B");
+
+        assertEquals("A", dynamicArray.getFirstElement());
+    }
+
+    @Test
+    public void testGetLastElement() {
+        ArrayOOP dynamicArray = new ArrayOOP();
+        dynamicArray.add(0, "A");
+        dynamicArray.add(1, "B");
+
+        assertEquals("B", dynamicArray.getLastElement());
     }
 }

@@ -9,18 +9,18 @@ public class StackArrayOOP {
         array = new ArrayOOP();
     }
 
-    public void push(Object value) {
-        array.addlast(value);
+    public void push(int  value) {
+        array.addLast(value);
     }
 
     public Object pop() {
-        Object lastElement = array.getlastelement();
+        Object lastElement = array.getLastElement();
         array.deleteLast();
         return lastElement;
     }
 
     public Object top() {
-        return array.getlastelement();
+        return array.getLastElement();
     }
 
     public boolean isEmpty() {

@@ -6,16 +6,16 @@ public class QueueArrayBasedProcedural {
     }
 
     public static Object dequeue() {
-        Object firstElement = ArrayProcedural.getfirstelement();
-        ArrayProcedural.deletefirst();
+        Object firstElement = ArrayProcedural.getFirstElement();
+        ArrayProcedural.deleteFirst();
         return firstElement;
     }
 
     public static Object front() {
-        return ArrayProcedural.getfirstelement();
+        return ArrayProcedural.getFirstElement();
     }
     public static Object back() {
-        return ArrayProcedural.getlastelement();
+        return ArrayProcedural.getLastElement();
     }
 
     public static boolean isEmpty() {

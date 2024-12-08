@@ -8,17 +8,17 @@ public class QueueArrayBasedOOP {
     }
 
     public void enqueue(Object value) {
-        array.addfirst(value);
+        array.addFirst(value);
     }
 
     public Object dequeue() {
-        Object firstElement = array.getfirstelement();
-        array.deletefirst();
+        Object firstElement = array.getFirstElement();
+        array.deleteFirst();
         return firstElement;
     }
 
     public Object front() {
-        return array.getfirstelement();
+        return array.getFirstElement();
     }
 
     public boolean isEmpty() {

@@ -155,7 +155,9 @@ public class LinkedListOOP {
     }
 
     private Node mergeSort(Node head) {
-        if (head == null || head.next == null) {
+        if (head == null) {
+            return head;
+        } else if (head.next == null) {
             return head;
         }
 

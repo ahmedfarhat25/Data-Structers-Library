@@ -8,14 +8,14 @@ public class StackArrayProcedural {
     }
 
     public static void pop() {
-        ArrayProcedural.deletefirst();
+        ArrayProcedural.deleteFirst();
     }
 
     public static Object top() {
         if (ArrayProcedural.getSize() == 0) {
             throw new IllegalStateException("Stack is empty");
         }
-        return ArrayProcedural.getlastelement();
+        return ArrayProcedural.getLastElement();
     }
 
     public static int size() {
