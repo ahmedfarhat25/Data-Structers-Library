@@ -40,4 +40,11 @@ public class QueueLinkedListBasedProcedural {
     public void remove(int data) {
         linkedList.delete(data);
     }
+    public int front(){
+        return linkedList.getFirst();
+    }
+    public int back(){
+        return linkedList.getback();
+    }
+
 }

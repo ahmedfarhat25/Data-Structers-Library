@@ -209,6 +209,12 @@ public class LinkedListOOP {
         }
         return head.val;
     }
+    public int getback() {
+        if (tail == null) {
+            throw new NoSuchElementException("List is empty");
+        }
+        return tail.val;
+    }
 
     public boolean isEmpty() {
         return head == null;

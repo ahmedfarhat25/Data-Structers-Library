@@ -26,12 +26,26 @@ public class ArrayOOP {
     public void setCapacity(int capacity) {
         this.capacity = capacity;
     }
+    public void addfirst(Object data) {
+        array[0] = data;
+    }
+    public void addlast(Object data) {
+        array[size - 1] = data;
+    }
 
-    public void add(Object data) {
+
+    public void add(int index, Object data) {
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException("Index out of bounds");
+        }
         if (size >= capacity) {
             grow();
         }
-        array[size++] = data;
+        for (int i = size; i > index; i--) {
+            array[i] = array[i - 1];
+        }
+        array[index] = data;
+        size++;
     }
 
     public void insert(int index, Object data) {
@@ -84,10 +98,10 @@ public class ArrayOOP {
         array[size - 1] = null;
     }
     public int getfirstelement() {
-                 return (int) array[0];
+        return (int) array[0];
     }
     public int getlastelement() {
-                 return (int) array[size - 1];
+        return (int) array[size - 1];
     }
     private void shrink() {
         capacity /= 2;
@@ -102,6 +116,11 @@ public class ArrayOOP {
             System.out.print(array[i] + " ");
         }
         System.out.println();
+    }
+    public void clear() {
+        size = 0;
+        capacity = 10;
+        array = new Object[capacity];
     }
 
     @Override

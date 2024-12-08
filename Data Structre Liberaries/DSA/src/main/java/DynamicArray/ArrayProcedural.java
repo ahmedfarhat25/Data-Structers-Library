@@ -88,6 +88,11 @@ public class ArrayProcedural {
     public static void sort() {
         Arrays.sort(array, 0, size);
     }
+    public static void clear() {
+        size = 0;
+        capacity = 10;
+        array = new Object[capacity];
+    }
 
     public static String display() {
         return Arrays.toString(Arrays.copyOf(array, size));

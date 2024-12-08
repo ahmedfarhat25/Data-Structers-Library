@@ -36,5 +36,8 @@ public class QueueArrayBasedProcedural {
     public static void remove(Object data) {
         ArrayProcedural.delete(data);
     }
+    public static void clear(){
+        ArrayProcedural.clear();
+    }
 }
 

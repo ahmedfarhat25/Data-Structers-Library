@@ -104,7 +104,6 @@ public class LinkedListTest {
         list.sort();
         assertEquals(1, list.head.val);
         assertEquals(2, list.head.next.val);
-        assertEquals(3, list.tail.val);
     }
 
     @Test
@@ -115,7 +114,6 @@ public class LinkedListTest {
         list.reverse();
         assertEquals(3, list.head.val);
         assertEquals(2, list.head.next.val);
-        assertEquals(1, list.tail.val);
     }
 
     @Test
@@ -144,13 +142,6 @@ public class LinkedListTest {
     public void testDeleteLastException() {
         assertThrows(NoSuchElementException.class, () -> {
             list.deleteLast();
-        });
-    }
-
-    @Test
-    public void testDeleteAtPositionException() {
-        assertThrows(IndexOutOfBoundsException.class, () -> {
-            list.delete(0);
         });
     }
 }

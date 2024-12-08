@@ -10,7 +10,7 @@ public class StackArrayOOP {
     }
 
     public void push(Object value) {
-        array.add(value);
+        array.addlast(value);
     }
 
     public Object pop() {

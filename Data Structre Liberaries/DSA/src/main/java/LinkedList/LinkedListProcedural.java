@@ -1,16 +1,6 @@
 package LinkedList;
 import java.util.NoSuchElementException;
 
-class Node {
-    int val;
-    Node next;
-
-    Node(int val) {
-        this.val = val;
-        this.next = null;
-    }
-}
-
 public class LinkedListProcedural {
     private Node head;
     private Node tail;
@@ -217,6 +207,12 @@ public class LinkedListProcedural {
             throw new NoSuchElementException("List is empty");
         }
         return head.val;
+    }
+    public int getback() {
+        if (tail == null) {
+            throw new NoSuchElementException("List is empty");
+        }
+        return tail.val;
     }
 
     public boolean isEmpty() {

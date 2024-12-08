@@ -8,7 +8,7 @@ public class QueueArrayBasedOOP {
     }
 
     public void enqueue(Object value) {
-        array.add(value);
+        array.addfirst(value);
     }
 
     public Object dequeue() {
@@ -38,5 +38,8 @@ public class QueueArrayBasedOOP {
     }
     public void remove(Object data) {
         array.delete(data);
+    }
+    public void clear() {
+        array.clear();
     }
 }
