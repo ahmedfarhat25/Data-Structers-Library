@@ -4,7 +4,7 @@
 This repository contains implementations of common data structures in Java, organized into a clear and modular file structure. It is designed for learning and practical use, with reusable interfaces.
 
 ## File Structure
-Entry point link: [Source Code](https://github.com/ahmedfarhat25/Data-Structers-Library/tree/main/Data%20Structre%20Liberaries/DSA/src/main/java)
+Entry point link: [Source Code](https://github.com/ahmedfarhat25/Data-Structers-Library/tree/main/DSA/src/main/java/DSA)
 
 ### Abstract
 Contains `AbstractList.java` which provides shared functionality for list-based implementations.
