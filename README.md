@@ -60,7 +60,7 @@ Implements data structures using linked lists:
 Clone the repository to explore the implementations:
 ```bash
 git clone https://github.com/ahmedfarhat25/Data-Structers-Library.git
-cd Data-Structers-Library
+cd Data-Structers-Library-DSA
 ```
 
 ## License
