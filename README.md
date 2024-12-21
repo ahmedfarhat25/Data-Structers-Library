@@ -7,11 +7,11 @@ This repository contains implementations of common data structures in Java, orga
 Entry point link: [Source Code](https://github.com/ahmedfarhat25/Data-Structers-Library/tree/main/DSA/src/main/java/DSA)
 
 ### Abstract
-Contains `AbstractList.java` which provides shared functionality for list-based implementations.
+Contains `AbstractArray.java` which provides shared functionality for Array-based implementations.
 
 ### ArrayBased
 Includes array-based data structures:
-- `ArrayList.java`
+- `ArrayArray.java`
 - `Queue.java`
 - `Dequeue.java`
 - `Stack.java`
@@ -34,10 +34,10 @@ Implements data structures using linked lists:
 ### Package Structure
 ```
 ├───Abstract
-│       AbstractList.java
-│       
+│       AbstractArray.java
+│       AbstractLinkedList.java
 ├───ArrayBased
-│       ArrayList.java
+│       ArrayArray.java
 │       Dequeue.java
 │       Queue.java
 │       Stack.java
